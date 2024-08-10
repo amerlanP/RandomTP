@@ -16,17 +16,18 @@ public final class RandomTP extends JavaPlugin {
         Logger logger = Bukkit.getLogger();
         logger.info("RandomTP Plugin Enabled");
 
+        // Get values from config and instantiate RTP object
         saveDefaultConfig();
         FileConfiguration config = getConfig();
         Map<String, Object> bounds = config.getConfigurationSection("bounds").getValues(false);
-
         int cooldown = config.get("cooldown-sec") != null ? (int) config.get("cooldown-sec") : 30;
         int minX = (int) bounds.get("minX");
         int maxX = (int) bounds.get("maxX");
         int minZ = (int) bounds.get("minZ");
         int maxZ = (int) bounds.get("maxZ");
-        logger.info(minX + " " + maxX + " " + minZ + " " + maxZ);
         RTP rtp = new RTP(minX, maxX, minZ, maxZ, cooldown);
+
+        // Assign command /wild to rtp
         getCommand("wild").setExecutor(rtp);
     }
 
