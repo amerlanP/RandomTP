@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="randomTP:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/randomTP_jar</output-path>
+    <root id="archive" name="randomTP.jar">
+      <element id="module-output" name="randomTP" />
+      <element id="file-copy" path="$PROJECT_DIR$/src/main/resources/plugin.yml" />
+    </root>
+  </artifact>
+</component>
